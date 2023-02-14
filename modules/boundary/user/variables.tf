@@ -1,7 +1,11 @@
-variable "addr" {
-  
+variable "scope_id" {
+  type = string
 }
 
-variable "recovery_kms_hcl" {
-  
+variable "user" {
+  type = string
+}
+
+variable "auth_method_id" {
+  type = string
 }
