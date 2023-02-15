@@ -16,6 +16,5 @@ variable "hosts" {
     address = string
     description = optional(string,"") 
     name = string
-    type = string
   }))
 }
