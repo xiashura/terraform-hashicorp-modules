@@ -9,3 +9,8 @@ variable "user" {
 variable "auth_method_id" {
   type = string
 }
+
+variable "special" {
+  type = bool
+  default = false
+}
