@@ -5,5 +5,5 @@ output "id" {
 
 
 output "auth_method_password_id" {
-  value = boundary_auth_method.password.0.id
+  value = var.password_auth_method ? boundary_auth_method.password.0.id : ""
 }
