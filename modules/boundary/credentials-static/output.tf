@@ -4,3 +4,11 @@ output "credentials_username_password_ids" {
     el.name => el.id
   }
 }
+
+
+output "credential_ssh_private_key" {
+  value = {
+    for el in boundary_credential_ssh_private_key.credentials_ssh_private_key: 
+    el.name => el.id
+  }
+}

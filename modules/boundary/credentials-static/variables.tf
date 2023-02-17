@@ -19,3 +19,14 @@ variable "credentials_username_password" {
   }))
   default = {} 
 }
+
+
+variable "credentials_ssh_private_key" {
+  type = map(object({
+    description = optional(string,"")
+    username = string
+    private_key = string
+    private_key_passphrase = optional(string,"") 
+  }))
+  default = {}
+}
