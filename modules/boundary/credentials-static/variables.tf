@@ -11,7 +11,6 @@ variable "scope_id" {
 }
 
 variable "credentials_username_password" {
-
   type = map(object({
     description = optional(string,"")
     username = string
@@ -27,6 +26,14 @@ variable "credentials_ssh_private_key" {
     username = string
     private_key = string
     private_key_passphrase = optional(string,"") 
+  }))
+  default = {}
+}
+
+variable "credentials_json" {
+ type = map(object({
+    description = optional(string,"")
+    object = string
   }))
   default = {}
 }

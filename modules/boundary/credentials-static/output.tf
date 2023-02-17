@@ -12,3 +12,10 @@ output "credential_ssh_private_key" {
     el.name => el.id
   }
 }
+
+output "credentials_json" {
+  value = {
+    for el in boundary_credential_json.credentials_json:
+    el.name => el.id 
+  }
+}

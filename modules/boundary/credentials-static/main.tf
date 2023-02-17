@@ -27,9 +27,12 @@ resource "boundary_credential_username_password" "credentials_username_password"
   password            = "${values(var.credentials_username_password)[count.index].description}"
 }
 
-# resource "boundary_credential_json" "example" {
-#   name                = "example_json"
-#   description         = "My first json credential!"
-#   credential_store_id = boundary_credential_store_static.example.id
-#   object              = file("~/object.json") # change to valid json file
-# }
+resource "boundary_credential_json" "credentials_json" {
+
+  count =  length(var.credentials_json)
+  credential_store_id = boundary_credential_store_static.example.id
+
+  name                = "${keys(var.credentials_json)[count.index]}"
+  description         = "${values(var.credentials_json)[count.index].description}"
+  object              = "${values(var.credentials_json)[count.index].object}" 
+}
