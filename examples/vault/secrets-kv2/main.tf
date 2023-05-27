@@ -21,20 +21,15 @@ provider "vault" {
 
 
 
-module "secrets" {
+module "projects-dev" {
   source = "../../../modules/vault/secrets-kv2"
 
   secret = {
-    path     = "test/dev"
-    group    = "user1"
-    services = ["backend", "frontend", "infra"]
+    path     = var.secrets.projects-dev.path
+    group    = var.secrets.projects-dev.groups
+    services = var.secrets.projects-dev.services
   }
-
   providers = {
     vault = vault.dev
   }
-
 }
-
-
-
