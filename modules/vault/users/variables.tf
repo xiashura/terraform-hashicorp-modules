@@ -1,7 +1,7 @@
 variable "users" {
   type = map(object({
     groups = list(string)
-    policy = optional(string, "deafult")
+    policy = optional(string, "default")
   }))
 }
 
