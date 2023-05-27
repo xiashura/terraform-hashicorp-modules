@@ -2,11 +2,11 @@ version: '3'
 
 services:
   vault:
-    container_name: vault
+    image: vault
     ports:
-      - 8200:8200
+      - "${TF_VAR_vault_port}:8100"
     environment:
-      - VAULT_DEV_ROOT_TOKEN_ID=myroot
+      - VAULT_DEV_ROOT_TOKEN_ID=${TF_VAR_vault_token}
       - VAULT_DEV_LISTEN_ADDRESS=0.0.0.0:8100
     cap_add:
       - "IPC_LOCK"
